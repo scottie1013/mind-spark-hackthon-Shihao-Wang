@@ -23,7 +23,7 @@ class _NavbarState extends State<Navbar> {
     return  Theme(
     data: ThemeData(
       primaryColor: Colors.yellow[700],
-      iconTheme: IconThemeData(color: Colors.red[700]),
+      iconTheme: IconThemeData(color: Color(0xFFD32F2F)),
       textButtonTheme: TextButtonThemeData(
         style: TextButton.styleFrom(backgroundColor: Colors.red[700]),
       ),
@@ -31,7 +31,7 @@ class _NavbarState extends State<Navbar> {
         style: ElevatedButton.styleFrom(backgroundColor: Colors.red[700]),
       ),
       appBarTheme: AppBarTheme(
-        backgroundColor: Colors.yellow[700],
+        backgroundColor: Color(0xFFFBC02D),
         titleTextStyle: TextStyle(color: Colors.red[700]),
         iconTheme: IconThemeData(color: Colors.red[700]),
       ),
