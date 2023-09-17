@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yellowjacketla/views/latest_crimes.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -14,6 +15,7 @@ class _HomeState extends State<Home> {
         appBar: AppBar(
             title: Text('Home'),
         ),
+        body: LatestNews(),
     );
   }
 }
