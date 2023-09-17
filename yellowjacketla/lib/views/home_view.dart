@@ -13,8 +13,17 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-            title: Text('Home'),
+        title: Text(
+          'Top Stories',
+          style: TextStyle(
+            fontFamily: 'Poppins',
+            fontWeight: FontWeight.bold,
+            fontSize: 35,
+          ),
         ),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+      ),
         body: LatestNews(),
     );
   }
