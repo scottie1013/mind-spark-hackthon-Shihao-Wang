@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:yellowjacketla/views/analytics.dart';
 import 'package:yellowjacketla/views/form.dart';
 import 'package:yellowjacketla/views/home_view.dart';
 
@@ -12,14 +13,17 @@ class Navbar extends StatefulWidget {
 
 class _NavbarState extends State<Navbar> {
   int pageIndex = 0;
+  
 
   final pages = [
     Home(),
     CrimePredictionForm(),
+    Analytics(),
   ];
 
   @override
   Widget build(BuildContext context) {
+    print("Current Page Index: $pageIndex");
     return  Theme(
     data: ThemeData(
       primaryColor: Colors.yellow[700],
@@ -86,6 +90,23 @@ class _NavbarState extends State<Navbar> {
                   )
                 : Icon(
                     Icons.fact_check_outlined,
+                    size: MediaQuery.of(context).size.height / 24,
+                  ),
+          ),
+          IconButton(
+            enableFeedback: false,
+            onPressed: () {
+              setState(() {
+                pageIndex = 2;
+              });
+            },
+            icon: pageIndex == 2
+                ? Icon(
+                    Icons.analytics_outlined,
+                    size: MediaQuery.of(context).size.height / 24,
+                  )
+                : Icon(
+                    Icons.analytics,
                     size: MediaQuery.of(context).size.height / 24,
                   ),
           ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:location/location.dart';
-import 'package:permission_handler/permission_handler.dart';
+// import 'package:location/location.dart';
+// import 'package:permission_handler/permission_handler.dart';
 import 'package:tflite_flutter/tflite_flutter.dart';
 
 
@@ -11,8 +11,8 @@ class CrimePredictionForm extends StatefulWidget {
 }
 
 class _CrimePredictionFormState extends State<CrimePredictionForm> {
-  late Location location;
-  LocationData? currentLocation;
+  // late Location location;
+  // LocationData? currentLocation;
   final _formKey = GlobalKey<FormState>();
   final List<String> columnNames = ['Desc_A', 'Desc_B', 'Desc_H', 'Desc_W'];
   int result = 0;
@@ -36,9 +36,6 @@ class _CrimePredictionFormState extends State<CrimePredictionForm> {
   };
 
   // Variables to store user inputs
-
-  String? _areaID;
-  String? _premiseCode;
   String? _victimAge;
   String? _victimSex;
   String? _victimDescent;
@@ -54,22 +51,22 @@ class _CrimePredictionFormState extends State<CrimePredictionForm> {
     super.initState();
     var timeOfDay = TimeOfDay.fromDateTime(DateTime.now());
     floatTime = convertTimeToFloat(timeOfDay);
-    location = new Location();
+    //location = new Location();
   }
-  Future<void> _requestPermission() async {
-    if (await Permission.location.request().isGranted) {
-      _getLocation();
-    }
-  }
+  // Future<void> _requestPermission() async {
+  //   if (await Permission.location.request().isGranted) {
+  //     _getLocation();
+  //   }
+  // }
 
-  Future<void> _getLocation() async {
-    try {
-      currentLocation = await location.getLocation();
-      setState(() {});
-    } catch (e) {
-      print("Error getting location: $e");
-    }
-  }
+  // Future<void> _getLocation() async {
+  //   try {
+  //     currentLocation = await location.getLocation();
+  //     setState(() {});
+  //   } catch (e) {
+  //     print("Error getting location: $e");
+  //   }
+  // }
 
   final Map<String, dynamic> columnValues = {
     'TIME OCC': 0.0,
@@ -245,7 +242,7 @@ class _CrimePredictionFormState extends State<CrimePredictionForm> {
 
 Future<void> predData() async {
     final interpreter =
-      await Interpreter.fromAsset('/converted_model.tflite');
+      await Interpreter.fromAsset('converted_model.tflite');
       var sexColumns = ['Sex_F', 'Sex_M', 'Sex_X'];
       var descColumns = ['Desc_-', 'Desc_A', 'Desc_B', 'Desc_C', 'Desc_D', 'Desc_F', 'Desc_G', 'Desc_H', 'Desc_I', 'Desc_J', 'Desc_K', 'Desc_L', 'Desc_O', 'Desc_P', 'Desc_S', 'Desc_U', 'Desc_V', 'Desc_W', 'Desc_X', 'Desc_Z'];
 
