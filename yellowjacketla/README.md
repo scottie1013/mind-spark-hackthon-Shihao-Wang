@@ -50,7 +50,7 @@ Each post has the following features:
 
 
 **Demo**
-[![YouTube Video Link](https://img.youtube.com/vi/ENGulZAw7aQ/maxresdefault.jpg)](https://www.youtube.com/watch?v=VIDEO_ID)
+[![YouTube Video Link](https://img.youtube.com/vi/ENGulZAw7aQ/maxresdefault.jpg)](https://www.youtube.com/watch?v=ENGulZAw7aQ)
 
 
             
